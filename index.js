@@ -22,7 +22,8 @@ export default function less(paths) {
 		},
 
 		async transform(code, id, options) {
-			if (!matchLess.test(id)) return
+			const idWithoutQuery = id.replace(/\?.*$/, '')
+			if (!matchLess.test(idWithoutQuery)) return
 
 			// add the code to the end of the file (less variables use the cascade)
 			return code + '\n\n' + (importCode || '')
