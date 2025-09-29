@@ -26,6 +26,7 @@
     "pub": "npm version patch && npm publish"
   },
   "dependencies": {
-    "fast-glob": "^3.3.2"
+    "fast-glob": "^3.3.2",
+    "magic-string": "^0.30.19"
   }
 }

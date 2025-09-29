@@ -1,5 +1,6 @@
 import glob from 'fast-glob'
 import path from 'node:path'
+import MagicString from 'magic-string'
 
 export default function less(paths) {
 
@@ -22,11 +23,20 @@ export default function less(paths) {
 		},
 
 		async transform(code, id, options) {
+
 			const idWithoutQuery = id.replace(/\?.*$/, '')
 			if (!matchLess.test(idWithoutQuery)) return
-
+			const string = new MagicString(code)
+			
 			// add the code to the end of the file (less variables use the cascade)
-			return code + '\n\n' + (importCode || '')
+			s.append('\n\n' + importCode)
+			
+			const map = s.generateMap()
+
+			return { 
+				code: s.toString(),
+				map: map.toString()
+			}
 		},
 
 		configureServer(server) {
