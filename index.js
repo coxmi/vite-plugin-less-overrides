@@ -29,12 +29,12 @@ export default function less(paths) {
 			const string = new MagicString(code)
 			
 			// add the code to the end of the file (less variables use the cascade)
-			s.append('\n\n' + importCode)
+			string.append('\n\n' + importCode)
 			
-			const map = s.generateMap()
+			const map = string.generateMap()
 
 			return { 
-				code: s.toString(),
+				code: string.toString(),
 				map: map.toString()
 			}
 		},
