@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-less-overrides",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Overwrite variables across all imports",
   "license": "MIT",
   "author": "Michael Cox",
@@ -23,7 +23,7 @@
     "index.js",
     "README.md"
   ],
-  "scripts": { 
+  "scripts": {
     "pub": "npm version patch && npm publish"
   },
   "dependencies": {
