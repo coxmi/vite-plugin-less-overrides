@@ -18,11 +18,12 @@
   ],
   "type": "module",
   "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "index.js",
     "README.md"
   ],
-  "scripts": {
+  "scripts": { 
     "pub": "npm version patch && npm publish"
   },
   "dependencies": {

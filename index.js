@@ -2,7 +2,7 @@ import glob from 'fast-glob'
 import path from 'node:path'
 import MagicString from 'magic-string'
 
-export default function less(paths) {
+export function less(paths) {
 
 	const files = glob.sync([paths].flat())
 	let filesAbsolute
@@ -53,3 +53,5 @@ export default function less(paths) {
 		},
 	}
 }
+
+export default less
